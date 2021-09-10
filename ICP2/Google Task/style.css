@@ -175,12 +175,12 @@ footer a:hover {
 }
 
 
-.blocks {
+.Tabs {
     width: 30%;
     margin-top: 25px;
     height: 40px;
 }
-.blocks ul{
+.Tabs ul{
     list-style-type: none;
     display: flex;
     flex-direction: row;
@@ -189,11 +189,11 @@ footer a:hover {
     padding: 0;
     border: 1px;
 }
-.blocks img{
+.Tabs img{
     width: 80px;
     height: 50px ;
 }
-.blocks li{
+.Tabs li{
     /*border: 1px solid gray;*/
     margin: 0.5em;
     padding: 0.5em;
