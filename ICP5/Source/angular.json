@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "UMKCICP5": {
+    "ICP5": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -121,7 +121,7 @@
       }
     }
   },
-  "defaultProject": "UMKCICP5",
+  "defaultProject": "ICP5",
   "cli": {
     "analytics": false
   }
