@@ -1,37 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Photo Gallery</title>
-    <link rel="stylesheet" href="style_hover.css">
-    <script src = "hover.js"></script>
-    <script src='https://code.jquery.com/jquery-3.3.1.min.js'> </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
-<h1 style="text-align:center"> Desserts </h1>
-<body>
+<div class="row justify-content-md-center">
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-action" *ngFor="let item of items" >
 
-<div id = "image">
-    Hover over an image below to display here.
+            <span>{{item.name}}</span>
+            <div class="pull-right">
+                <button class="btn btn-primary btn-xs fa fa-pencil" (click)="onEdit(item)"></button>
+                <button class="btn btn-danger btn-xs fa fa-trash-o" (click)="onRemove(item)"></button>
+            </div>
+        </li>
+
+    </ul>
 </div>
 
-<img class = "preview"
-     alt = "Batter is ready"
-     src = "https://cdn.sallysbakingaddiction.com/wp-content/uploads/2017/06/moist-chocolate-cupcakes-7.jpg"
-     onmouseover = "upDate(this)"
-     onmouseout = "unDo()">
-
-<img class = "preview"
-     alt = "Perfect Baking"
-     src = "https://cdn.sallysbakingaddiction.com/wp-content/uploads/2017/06/moist-chocolate-cupcakes-6.jpg"
-     onmouseover = "upDate(this)"
-     onmouseout = "unDo()">
-
-<img class = "preview"
-     alt = "Yummy yummy cup cake"
-     src = "https://cdn.sallysbakingaddiction.com/wp-content/uploads/2017/06/moist-chocolate-cupcakes-5.jpg"
-     onmouseover = "upDate(this)"
-     onmouseout = "unDo()">
-
-</body>
-</html>
+<!-- NEW ITEM -->
+<div class="row justify-content-md-center">
+    <nav>
+        <a routerLink="/new-item" class="pull-right">New item</a>
+    </nav>
+</div>
