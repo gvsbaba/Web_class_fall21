@@ -62,6 +62,8 @@ export class SearchRecipeComponent implements OnInit {
       this._http.get( this.placesApi  + this.clientdId + this.clientSecret + this.version
         + this.near + this.placeValue).subscribe((res: any) => {
         console.log(res);
+        /* to get the places of where we find */
+
         this.venueList = Object.keys(res.response.venues).map(function (k) {
           const i = res.response.venues[k];
           return {name: i.name, formattedAddress: i.location.formattedAddress};
