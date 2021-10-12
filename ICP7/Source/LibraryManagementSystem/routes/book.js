@@ -27,7 +27,19 @@ router.post('/', function (req, res, next) {
 });
 
 /* UPDATE BOOK */
+router.put('/', function (req, res, next) {
+  Book.create(req.body, function (err, post) {
+    if (err) return next(err);
+    res.json(post);
+  });
+});
 
 /* DELETE BOOK */
+router.delete('/', function (req, res, next) {
+  Book.create(req.body, function (err, post) {
+    if (err) return next(err);
+    res.json(post);
+  });
+});
 
 module.exports = router;
