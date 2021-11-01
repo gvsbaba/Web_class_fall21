@@ -15,16 +15,16 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private static final String MAIN_ACTIVITY_TAG = "MainActivity";
-    final int BASE_PRICE = 5;
-    final int PEPPERONI = 2;
-    final int SAUSAGE = 2;
-    final int HAM = 2;
-    final int BACON = 2;
-    final String order_summary_has_pepperoni = "Do you want Pepperoni? ";
-    final String order_summary_has_sausage = "Do you want Sausage? ";
-    final String order_summary_has_ham = "Do you want Ham? ";
-    final String order_summary_has_bacon = "Do you want Bacon? ";
-    int quantity = 1;
+    final int BASE_PRICE = 6;
+    final int ONIONS = 4;
+    final int SAUSE = 2;
+    final int OLIVES = 3;
+    final int BEEF = 6;
+    final String order_summary_has_pepperoni = "Do you want Onions? ";
+    final String order_summary_has_sausage = "Do you want Sause? ";
+    final String order_summary_has_ham = "Do you want Olives? ";
+    final String order_summary_has_bacon = "Do you want Beef? ";
+    int quantity = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,23 +49,23 @@ public class MainActivity extends AppCompatActivity {
                 String userInputName = userInputNameView.getText().toString();
 
                 // check if whipped cream is selected
-                CheckBox pepperoni = (CheckBox) findViewById(R.id.pepperoniChecked);
+                CheckBox pepperoni = (CheckBox) findViewById(R.id.onionsChecked);
                 boolean hasPepperoni = pepperoni.isChecked();
 
                 // check if chocolate is selected
-                CheckBox sausage = (CheckBox) findViewById(R.id.sausageChecked);
+                CheckBox sausage = (CheckBox) findViewById(R.id.sauseChecked);
                 boolean hasSausage = sausage.isChecked();
 
-                CheckBox ham = (CheckBox) findViewById(R.id.hamChecked);
+                CheckBox ham = (CheckBox) findViewById(R.id.olivesChecked);
                 boolean hasHam = ham.isChecked();
 
-                CheckBox bacon = (CheckBox) findViewById(R.id.baconChecked);
+                CheckBox bacon = (CheckBox) findViewById(R.id.beefChecked);
                 boolean hasBacon = bacon.isChecked();
 
                 // calculate and store the total price
-                float totalPrice = calculatePrice(hasPepperoni, hasSausage, hasHam, hasBacon);
+                float totalPrice = calculatePrice(hasOnions, hasSause, hasOlives, hasBeef);
 
-                String orderSummaryMessage = createOrderSummary(userInputName, hasPepperoni, hasSausage, hasHam, hasBacon, totalPrice);
+                String orderSummaryMessage = createOrderSummary(userInputName, hasOnions, hasSause, hasOlives, hasBeef, totalPrice);
 
                 // create and store the order summary
                 summaryIntent.putExtra("USER NAME", userInputName);
@@ -80,11 +80,11 @@ public class MainActivity extends AppCompatActivity {
         return bool ? (getString(R.string.yes)) : (getString(R.string.no));
     }
 
-    private String createOrderSummary(String userInputName, boolean hasPepperoni, boolean hasSausage, boolean hasHam, boolean hasBacon, float price) {
+    private String createOrderSummary(String userInputName, boolean hasOnions, boolean hasSause, boolean hasOlives, boolean hasBeef, float price) {
         String orderSummaryMessage = getString(R.string.order_summary_name, userInputName) + "\n" +
-                order_summary_has_pepperoni +  boolToString(hasPepperoni) + "\n" +
-                order_summary_has_sausage +  boolToString(hasSausage) + "\n" +
-                order_summary_has_ham + boolToString(hasHam) + "\n" +
+                order_summary_has_pepperoni +  boolToString(hasOnions) + "\n" +
+                order_summary_has_sausage +  boolToString(hasSause) + "\n" +
+                order_summary_has_ham + boolToString(has) + "\n" +
                 order_summary_has_bacon + boolToString(hasBacon) + "\n" +
                 getString(R.string.order_summary_quantity, quantity) + "\n" +
                 getString(R.string.order_summary_total_price, price) + "\n" +
@@ -165,8 +165,8 @@ public class MainActivity extends AppCompatActivity {
     public void sendEmail(View view) {
         Log.i("Send email", "");
 
-        String[] TO = {"bhuvankumarchennoju@gmail.com"};
-        String[] CC = {"bhuvankumarchennoju@gmail.com"};
+        String[] TO = {"babagvs1919@gmail.com"};
+        String[] CC = {"babagvs1919@gmail.com"};
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
         emailIntent.setData(Uri.parse("mailto:"));
         emailIntent.setType("text/plain");
