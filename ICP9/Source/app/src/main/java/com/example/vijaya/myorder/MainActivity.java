@@ -49,18 +49,18 @@ public class MainActivity extends AppCompatActivity {
                 String userInputName = userInputNameView.getText().toString();
 
                 // check if whipped cream is selected
-                CheckBox pepperoni = (CheckBox) findViewById(R.id.onionsChecked);
-                boolean hasPepperoni = pepperoni.isChecked();
+                CheckBox onionss = (CheckBox) findViewById(R.id.onionsChecked);
+                boolean hasOnions = onions.isChecked();
 
                 // check if chocolate is selected
-                CheckBox sausage = (CheckBox) findViewById(R.id.sauseChecked);
-                boolean hasSausage = sausage.isChecked();
+                CheckBox sause = (CheckBox) findViewById(R.id.sauseChecked);
+                boolean hasSause = sause.isChecked();
 
-                CheckBox ham = (CheckBox) findViewById(R.id.olivesChecked);
-                boolean hasHam = ham.isChecked();
+                CheckBox olives = (CheckBox) findViewById(R.id.olivesChecked);
+                boolean hasOlives = olives.isChecked();
 
-                CheckBox bacon = (CheckBox) findViewById(R.id.beefChecked);
-                boolean hasBacon = bacon.isChecked();
+                CheckBox beef = (CheckBox) findViewById(R.id.beefChecked);
+                boolean hasBeef = beef.isChecked();
 
                 // calculate and store the total price
                 float totalPrice = calculatePrice(hasOnions, hasSause, hasOlives, hasBeef);
@@ -82,10 +82,10 @@ public class MainActivity extends AppCompatActivity {
 
     private String createOrderSummary(String userInputName, boolean hasOnions, boolean hasSause, boolean hasOlives, boolean hasBeef, float price) {
         String orderSummaryMessage = getString(R.string.order_summary_name, userInputName) + "\n" +
-                order_summary_has_pepperoni +  boolToString(hasOnions) + "\n" +
-                order_summary_has_sausage +  boolToString(hasSause) + "\n" +
-                order_summary_has_ham + boolToString(has) + "\n" +
-                order_summary_has_bacon + boolToString(hasBacon) + "\n" +
+                order_summary_has_onions +  boolToString(hasOnions) + "\n" +
+                order_summary_has_sause +  boolToString(hasSause) + "\n" +
+                order_summary_has_olives + boolToString(hasOlives) + "\n" +
+                order_summary_has_beef + boolToString(hasBeef) + "\n" +
                 getString(R.string.order_summary_quantity, quantity) + "\n" +
                 getString(R.string.order_summary_total_price, price) + "\n" +
                 getString(R.string.thank_you);
@@ -97,19 +97,19 @@ public class MainActivity extends AppCompatActivity {
      *
      * @return total Price
      */
-    private float calculatePrice(boolean hasPepperoni, boolean hasSausage, boolean hasHam, boolean hasBacon) {
+    private float calculatePrice(boolean hasOnions, boolean hasSause, boolean hasOlives, boolean hasBeef) {
         int basePrice = BASE_PRICE;
         if (hasPepperoni) {
-            basePrice += PEPPERONI;
+            basePrice += ONIONS;
         }
         if (hasSausage) {
-            basePrice += SAUSAGE;
+            basePrice += SAUSE;
         }
         if (hasHam){
-            basePrice += HAM;
+            basePrice += OLIVES;
         }
         if (hasBacon){
-            basePrice += BACON;
+            basePrice += BEEF;
         }
         return quantity * basePrice;
     }
@@ -181,18 +181,18 @@ public class MainActivity extends AppCompatActivity {
         String userInputName = userInputNameView.getText().toString();
 
         // check if whipped cream is selected
-        CheckBox pepperoni = (CheckBox) findViewById(R.id.pepperoniChecked);
-        boolean hasPepperoni = pepperoni.isChecked();
+        CheckBox onions = (CheckBox) findViewById(R.id.onionsChecked);
+        boolean hasOnions = onions.isChecked();
 
         // check if chocolate is selected
-        CheckBox sausage = (CheckBox) findViewById(R.id.sausageChecked);
-        boolean hasSausage = sausage.isChecked();
+        CheckBox sause = (CheckBox) findViewById(R.id.sauseChecked);
+        boolean hasSause = sause.isChecked();
 
-        CheckBox ham = (CheckBox) findViewById(R.id.hamChecked);
-        boolean hasHam = ham.isChecked();
+        CheckBox olives = (CheckBox) findViewById(R.id.olivesChecked);
+        boolean hasolives = olives.isChecked();
 
-        CheckBox bacon = (CheckBox) findViewById(R.id.baconChecked);
-        boolean hasBacon = bacon.isChecked();
+        CheckBox beef= (CheckBox) findViewById(R.id.beefChecked);
+        boolean hasBeef = beef.isChecked();
 
         // calculate and store the total price
         float totalPrice = calculatePrice(hasPepperoni, hasSausage, hasHam, hasBacon);
