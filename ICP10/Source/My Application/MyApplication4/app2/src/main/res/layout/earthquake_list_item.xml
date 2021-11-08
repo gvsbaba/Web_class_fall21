@@ -18,15 +18,15 @@
         android:gravity="center"
         android:textColor="@android:color/white"
         android:textSize="16sp"
-        tools:text="8.9" />
+        tools:text="9.0" />
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="2dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_weight="1"
+        android:layout_weight="2.5"
         android:orientation="vertical">
 
         <TextView
@@ -35,18 +35,18 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:fontFamily="sans-serif-medium"
-            android:maxLines="1"
+            android:maxLines="1.0"
             android:textAllCaps="true"
             android:textColor="@color/textColorEarthquakeDetails"
-            android:textSize="12sp"
-            tools:text="30km S of" />
+            android:textSize="16sp"
+            tools:text="30km" />
 
         <TextView
             android:id="@+id/primary_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:maxLines="2"
+            android:maxLines="2.0"
             android:textColor="@color/textColorEarthquakeLocation"
             android:textSize="16sp"
             tools:text="Long placeholder location that should wrap to more than 2 lines of text" />
@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:textColor="@color/textColorEarthquakeDetails"
-            android:textSize="12sp"
+            android:textSize="16sp"
             tools:text="Mar 6, 2010" />
 
         <TextView
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:textColor="@color/textColorEarthquakeDetails"
-            android:textSize="12sp"
+            android:textSize="16sp"
             tools:text="3:00 PM" />
 
     </LinearLayout>

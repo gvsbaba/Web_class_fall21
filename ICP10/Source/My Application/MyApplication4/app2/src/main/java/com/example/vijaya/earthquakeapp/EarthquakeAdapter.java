@@ -179,7 +179,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
     }
 
     /**
-     * Return the formatted magnitude string showing 1 decimal place (i.e. "3.2")
+     * Return the formatted magnitude string showing 1 decimal place (i.e., "3.2")
      * from a decimal magnitude value.
      */
     private String formatMagnitude(double magnitude) {
@@ -188,18 +188,18 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
     }
 
     /**
-     * Return the formatted date string (i.e. "Mar 3, 1984") from a Date object.
+     * Return the formatted date string (i.e., "03/ 03/ 1984") from a Date object.
      */
     private String formatDate(Date dateObject) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("LLL dd, yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/ dd/ yyyy");
         return dateFormat.format(dateObject);
     }
 
     /**
-     * Return the formatted date string (i.e. "4:30 PM") from a Date object.
+     * Return the formatted date string (i.e., "04:30 PM") from a Date object.
      */
     private String formatTime(Date dateObject) {
-        SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm a");
+        SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm a");
         return timeFormat.format(dateObject);
     }
 }

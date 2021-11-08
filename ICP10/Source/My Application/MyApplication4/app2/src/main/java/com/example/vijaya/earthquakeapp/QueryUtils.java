@@ -53,7 +53,7 @@ public class QueryUtils {
             //TODO: 2. Read from the Url Connection and store it as a string(jsonResponse)
             urlConnection = url.openConnection();
             // wrap the urlconnection in a bufferedreader
-
+            InputStreamReader inputStreamReader = new InputStreamReader(urlConnection.getInputStream());
             bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
 
             String line;
@@ -80,12 +80,13 @@ public class QueryUtils {
             // Iterating the 'features' list
             for(int i =0;i < jsonArray.length(); i++){
                 // Getting json Object 'properties'
-                JSONObject json = jsonArray.getJSONObject(i).getJSONObject("properties");
+                JSONObject json = jsonArray.getJSONObject(i).getJSONObject("Properties");
                 System.out.println(json);
                 // Passing Data to Constructor
-                Earthquake earthquake = new Earthquake((double)json.get("mag"),
-                        (String) json.get("place"), (long)json.get("time"), (String) json.get("url"));
+                Earthquake earthquake = new Earthquake((double)json.get("Magnitude"),
+                        (String) json.get("Location"), (long)json.get("Time"), (String) json.get("URL"));
                 // Adding each 'EarthQuake' Object to List created.
+
                 earthquakes.add(earthquake);
             }
 
